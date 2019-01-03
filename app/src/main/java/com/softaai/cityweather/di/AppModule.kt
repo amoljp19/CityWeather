@@ -19,5 +19,5 @@ class AppModule(private val weatherApplication: CityWeatherApplication) {
     @Provides
     @Singleton
     fun provideContext(): Context = weatherApplication
-    
+
 }

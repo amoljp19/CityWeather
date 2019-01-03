@@ -1,7 +1,8 @@
-package com.softaai.cityweather.ui
+package com.softaai.cityweather.weather.adapters
 
 
 /**
  * Created by Amol Pawar on 03-01-2019.
  * softAai Apps
  */
+
