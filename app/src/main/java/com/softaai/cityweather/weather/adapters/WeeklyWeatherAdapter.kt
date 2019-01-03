@@ -20,7 +20,7 @@ import com.softaai.cityweather.utils.WeatherMathUtils.convertFahrenheitToCelsius
 class WeeklyWeatherAdapter(val list: ArrayList<WeeklyWeatherDTO>) : RecyclerView.Adapter<WeeklyWeatherAdapter.ViewHolder>(){
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val itemView = LayoutInflater.from(parent?.context)
+        val itemView = LayoutInflater.from(parent.context)
             .inflate(R.layout.item_city_weather_day, parent, false)
         return ViewHolder(itemView)
     }
@@ -31,10 +31,10 @@ class WeeklyWeatherAdapter(val list: ArrayList<WeeklyWeatherDTO>) : RecyclerView
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = list.get(position)
-        holder?.textViewDayMaxTemp?.text = convertToValueWithUnit(2, unitDegreesCelsius, convertFahrenheitToCelsius(item.maxTemp.toDouble()))
-        holder?.textViewDayMinTemp?.text = convertToValueWithUnit(2, unitDegreesCelsius, convertFahrenheitToCelsius(item.minTemp.toDouble()))
-        holder?.textViewDayWeatherWeekDay?.text = item.dayOfWeek
-        holder?.textViewDayWeatherType?.text = item.weatherType
+        holder.textViewDayMaxTemp.text = convertToValueWithUnit(2, unitDegreesCelsius, convertFahrenheitToCelsius(item.maxTemp.toDouble()))
+        holder.textViewDayMinTemp.text = convertToValueWithUnit(2, unitDegreesCelsius, convertFahrenheitToCelsius(item.minTemp.toDouble()))
+        holder.textViewDayWeatherWeekDay.text = item.dayOfWeek
+        holder.textViewDayWeatherType.text = item.weatherType
     }
 
     class ViewHolder(view: View)  : RecyclerView.ViewHolder(view) {

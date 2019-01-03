@@ -32,7 +32,7 @@ object StringFormatter {
     fun convertTimestampToHourFormat(timestamp: Long, timeZone: String?) : String{
         val HOUR_MINUTE = "HH:mm"
         val formatter = SimpleDateFormat (HOUR_MINUTE)
-        formatter.setTimeZone(TimeZone.getTimeZone(timeZone))
+        formatter.timeZone = TimeZone.getTimeZone(timeZone)
 
         val dayName = formatter.format(Date(timestamp * 1000))
         return dayName

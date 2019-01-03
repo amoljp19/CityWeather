@@ -12,7 +12,7 @@ import android.content.Context
  */
 
 
-@Database(entities = arrayOf(CityEntity::class), version = 1)
+@Database(entities = arrayOf(CityEntity::class), version = 1, exportSchema = false)
 abstract class RoomDataSource : RoomDatabase() {
 
     abstract fun weatherSearchCityDao(): WeatherCitiesDao

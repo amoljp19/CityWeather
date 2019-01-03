@@ -18,6 +18,6 @@ interface RemoteGeocodingService {
     @GET("json")
     fun requestCityAddressByName(
         @Query("address") address: String,
-        @Query("key") apiKey: String
+        @Query("key") key: String
     ): Single<LocationResponse>
 }

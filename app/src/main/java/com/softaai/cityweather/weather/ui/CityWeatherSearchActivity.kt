@@ -65,15 +65,15 @@ private fun setupSearchedCityClickedListener() {
         else{
             processRequestStartUI()
             val searchedCityName = autocomplete_textView.text.toString()
-            setupWeatherDetailsObserver(searchedCityName)?.let { it -> compositeDisposable.add(it) }
+            setupWeatherDetailsObserver(searchedCityName)?.let { it1 -> compositeDisposable.add(it1) }
         }
     }
 }
 
 private fun setupTextInputObserver(itemInputNameObservable: Observable<Boolean>): Disposable {
     return itemInputNameObservable.subscribe { inputIsEmpty: Boolean ->
-        cityTextInputLayout.setError(getString(R.string.invalid_input_message))
-        cityTextInputLayout.setErrorEnabled(inputIsEmpty)
+        cityTextInputLayout.error = getString(R.string.invalid_input_message)
+        cityTextInputLayout.isErrorEnabled = inputIsEmpty
         cityButton?.isEnabled = !inputIsEmpty
     }
 }

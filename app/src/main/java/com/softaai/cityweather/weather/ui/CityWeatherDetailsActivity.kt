@@ -64,10 +64,10 @@ class CityWeatherDetailsActivity : AppCompatActivity()
         val weeklyWeatherList = weatherDetails.weeklyDayWeahterList as ArrayList<WeeklyWeatherDTO>
         val adapter: WeeklyWeatherAdapter? = WeeklyWeatherAdapter(weeklyWeatherList)
         val mLayoutManager = LinearLayoutManager(applicationContext)
-        recyclerViewWeeklyWeather.setLayoutManager(mLayoutManager)
-        recyclerViewWeeklyWeather.setItemAnimator(DefaultItemAnimator())
+        recyclerViewWeeklyWeather.layoutManager = mLayoutManager
+        recyclerViewWeeklyWeather.itemAnimator = DefaultItemAnimator()
         recyclerViewWeeklyWeather.addItemDecoration(DividerItemDecoration(this, DividerItemDecoration.VERTICAL))
-        recyclerViewWeeklyWeather.setAdapter(adapter)
+        recyclerViewWeeklyWeather.adapter = adapter
     }
 
     private fun setupTemperatureTextColor(temperature: Double) {
