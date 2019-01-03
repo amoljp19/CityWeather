@@ -9,6 +9,7 @@ buildscript {
     ext.rxjava_version = '2.1.15'
     ext.rxandroid_version = '2.0.2'
     ext.parceler_version = '1.1.9'
+    ext.okhttp_version = '3.9.0'
 
     repositories {
         google()
