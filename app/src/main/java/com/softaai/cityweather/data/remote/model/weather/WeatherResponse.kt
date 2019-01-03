@@ -21,7 +21,7 @@ data class WeatherResponse(
     val daily: Daily,
     val alerts: List<Alert>,
     val flags: Flags,
-    val offset: Int
+    val offset: Double
 )
 
 

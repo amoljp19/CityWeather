@@ -24,6 +24,7 @@ data class Data(
     val precipIntensityMaxTime: Int,
     val precipProbability: Double,
     val precipType: String,
+    val temperature: Double,
     val temperatureHigh: Double,
     val temperatureHighTime: Int,
     val temperatureLow: Double,

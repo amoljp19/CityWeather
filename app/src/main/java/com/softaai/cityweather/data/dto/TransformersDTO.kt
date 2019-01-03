@@ -29,7 +29,7 @@ object TransformersDTO{
 
         val hourlyWeatherList = ArrayList<HourlyWeatherDTO>()
         weatherResponse?.hourly?.data?.forEach {
-            hourlyWeatherList.add(HourlyWeatherDTO(it.time.toLong(), it.temperatureMin))
+            hourlyWeatherList.add(HourlyWeatherDTO(it.time.toLong(), it.temperature))
         }
 
         var hourlyWeatherStringFormatedHoursList = ArrayList<String>()
