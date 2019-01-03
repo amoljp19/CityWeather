@@ -1,5 +1,6 @@
 package com.softaai.cityweather.weather.ui
 
+import android.arch.lifecycle.ViewModelProviders
 import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
@@ -13,6 +14,7 @@ import com.softaai.cityweather.CityWeatherApplication
 import com.softaai.cityweather.R
 import com.softaai.cityweather.data.dto.WeatherDetailsDTO
 import com.softaai.cityweather.data.room.CityEntity
+import com.softaai.cityweather.utils.InputValidator.isValidCityInput
 import com.softaai.cityweather.weather.viewmodel.WeatherViewModel
 import com.softaai.cityweather.weather.viewmodel.WeatherViewModelFactory
 import io.reactivex.Observable

@@ -1,6 +1,7 @@
 package com.softaai.cityweather
 
 import android.app.Application
+import com.softaai.cityweather.di.*
 
 
 /**
@@ -10,5 +11,20 @@ import android.app.Application
 
 class CityWeatherApplication : Application()
 {
+    companion object {
+        lateinit var appComponent: AppComponent
+    }
 
+    override fun onCreate() {
+        super.onCreate()
+        initializeDagger()
+    }
+
+    fun initializeDagger() {
+
+        appComponent = DaggerAppComponent.builder()
+            .appModule(AppModule(this))
+            .roomModule(RoomModule())
+            .cityWeatherRemoteModule(CityWeatherRemoteModule()).build()
+    }
 }
