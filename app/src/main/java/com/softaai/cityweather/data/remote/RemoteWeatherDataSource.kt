@@ -1,5 +1,6 @@
 package com.softaai.cityweather.data.remote
 
+import com.softaai.cityweather.BuildConfig
 import com.softaai.cityweather.data.remote.model.location.LocationResponse
 import com.softaai.cityweather.data.remote.model.weather.WeatherResponse
 import com.softaai.cityweather.data.remote.service.location.RemoteGeocodingService
@@ -18,5 +19,5 @@ class RemoteWeatherDataSource @Inject constructor(private val remoteWeatherServi
     fun requestWeatherForCity(latitude: String, longitude: String): Single<WeatherResponse> =
         remoteWeatherService.requestWeatherForCity(latitude, longitude)
 
-    fun requestCityAddressByName(cityName: String): Single<LocationResponse> = remoteGeocodingService.requestCityAddressByName(cityName)
+    fun requestCityAddressByName(cityName: String): Single<LocationResponse> = remoteGeocodingService.requestCityAddressByName(cityName, BuildConfig.GEO_CODING_API_KEY)
 }

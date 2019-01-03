@@ -3,6 +3,7 @@ package com.softaai.cityweather.data.remote.service.location
 import com.softaai.cityweather.data.remote.model.location.LocationResponse
 import io.reactivex.Single
 import retrofit2.http.GET
+import retrofit2.http.Headers
 import retrofit2.http.Query
 
 
@@ -13,8 +14,10 @@ import retrofit2.http.Query
 
 interface RemoteGeocodingService {
 
+    @Headers("Accept: */*")
     @GET("json")
     fun requestCityAddressByName(
-        @Query("address") address: String
+        @Query("address") address: String,
+        @Query("key") apiKey: String
     ): Single<LocationResponse>
 }
